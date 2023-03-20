@@ -14,26 +14,34 @@ RSpec.describe BankAccount do
   end
 
   describe "deposit" do
-    context "with a valid amount" do
-      before(:each) do
-        @account = BankAccount.new
-        @initial_balance = @account.balance
-        @amount = 100
-        @account.deposit(@amount)
-      end
-      
-      it "increases the account balance" do
-        expect(@account.balance).to eq(@initial_balance + @amount)
-      end
-      
-      it "adds a new transaction to the account" do
-        expect(@account.transactions.length).to eq(1)
-        expect(@account.transactions[0].credit).to eq(@amount)
-      end
+    before(:each) do
+      @account = BankAccount.new
+      @initial_balance = @account.balance
+      @amount = 100
+      @account.deposit(@amount)
+    end
+    
+    it "increases the account balance" do
+      expect(@account.balance).to eq(@initial_balance + @amount)
+    end
+    
+    it "adds a new transaction to the account" do
+      expect(@account.transactions.length).to eq(1)
+      expect(@account.transactions[0].credit).to eq(@amount)
+    end
+
+    it "should raise an error if the deposit amount is not a number" do
+      account = BankAccount.new
+      expect{ account.deposit("100") }.to raise_error(TypeError, "Invalid input: Amount must be a number")
     end
   end
 
   describe 'withdraw' do
+    it "should raise an error if the withdrawal amount is not a number" do
+      account = BankAccount.new
+      expect{ account.withdraw("50") }.to raise_error(TypeError, "Invalid input: Amount must be a number")
+    end
+
     context 'when amount is less than or equal to balance' do
       before(:each) do
         @account = BankAccount.new
