@@ -1,10 +1,12 @@
-require './lib/BankAccount.rb'
-require './lib/BankStatementPrinter'
+# frozen_string_literal: true
 
-bankAccount = BankAccount.new()
+require './lib/bank_account'
+require './lib/bank_statement_printer'
 
-bankAccount.deposit(100)
-bankAccount.deposit(100)
-bankAccount.deposit(1000)
-bankAccount.withdraw(1200)
-BankStatementPrinter.printStatement(bankAccount)
+bank_account = BankAccount.new
+
+bank_account.deposit(100)
+bank_account.deposit(100)
+bank_account.deposit(1000)
+bank_account.withdraw(1200)
+BankStatementPrinter.printStatement(bank_account)

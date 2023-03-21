@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
+# This class represents a single transaction in a bank account.
 class Transaction
   attr_reader :date, :credit, :debit, :balance
 
-  def initialize(date:, credit: nil, debit: nil, balance:)
+  def initialize(date:, balance:, credit: nil, debit: nil)
     @date = date
     @credit = credit
     @debit = debit
@@ -9,12 +12,12 @@ class Transaction
   end
 
   def to_s
-    "#{date} || #{formatAmount(credit)} || #{formatAmount(debit)} || #{formatAmount(balance)}"
+    "#{date} || #{format_amount(credit)} || #{format_amount(debit)} || #{format_amount(balance)}"
   end
 
   private
 
-  def formatAmount(amount)
-    amount ? sprintf("%.2f", amount) : ""
+  def format_amount(amount)
+    amount ? format('%.2f', amount) : ''
   end
 end

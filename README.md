@@ -10,14 +10,14 @@ This is my solution for a Bank tech test by [@makersacademy](https://github.com/
 The application can be run in a REPL environment like `IRB`. Here's an example of how to use it:
 
 ```
-require './lib/BankAccount.rb'
-require './lib/BankStatementPrinter.rb'
+require './lib/bank_account'
+require './lib/bank_statement_printer'
 
-account = BankAccount.new
-account.deposit(1000)
-account.deposit(2000)
-account.withdraw(500)
-BankStatementPrinter.printStatement(account)
+bank_account = BankAccount.new
+bank_account.deposit(1000)
+bank_account.deposit(2000)
+bank_account.withdraw(500)
+BankStatementPrinter.print_statement(bank_account)
 ```
 
 This should output a bank statement similar to this (dates will differ):
@@ -30,7 +30,7 @@ date || credit || debit || balance
 ```
 
 ## Testing
-To run all tests, use the command `rspec` in the terminal.
+To run all tests, use the command `rspec` in the terminal. The `simplecov` gem should show you a coverage report of the test run to be above 95%.
 
 ## Approach
 The program separates the bank functionality into different classes. This makes the code easier to understand and maintain, as each class has a specific responsibility. 
