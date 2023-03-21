@@ -1,10 +1,10 @@
 # Bank Tech Test
 
-This is a solution for the Bank tech test. It provides a Ruby implementation that allows for deposits, withdrawals and printing of an account statement.
+This is my solution for a Bank tech test by [@makersacademy](https://github.com/makersacademy). It provides a Ruby implementation that allows for deposits, withdrawals and printing of an account statement.
 
 ## Getting Started
 1. Clone the repository.
-2. Run bundle install to install the required dependencies.
+2. Run `bundle install` to install the required dependencies.
 
 ## Usage
 The application can be run in a REPL environment like `IRB`. Here's an example of how to use it:
@@ -30,7 +30,7 @@ date || credit || debit || balance
 ```
 
 ## Testing
-To run the tests, simply run the command `rspec` in the terminal.
+To run all tests, use the command `rspec` in the terminal.
 
 ## Approach
 The program separates the bank functionality into different classes. This makes the code easier to understand and maintain, as each class has a specific responsibility. 
