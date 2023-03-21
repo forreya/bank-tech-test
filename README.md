@@ -30,7 +30,7 @@ date || credit || debit || balance
 ```
 
 ## Testing
-To run all tests, use the command `rspec` in the terminal. The `simplecov` gem should show you a coverage report of the test run to be above 95%.
+To run all tests, use the command `rspec` in the terminal. The `simplecov` gem should generate a coverage report of the test run and display a test coverage of above 95%.
 
 ## Approach
 The program separates the bank functionality into different classes. This makes the code easier to understand and maintain, as each class has a specific responsibility. 
